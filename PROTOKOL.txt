@@ -43,6 +43,7 @@ UPLOAD
 * TUJUAN: untuk mengupload sebuah file ke server dengan parameter
 * PARAMETER:
   - PARAMETER 1: nama file
+  - PARAMETER 2: isi file yang diencode dalam base64
 *RESULT: 
  - BERHASIL:
    - status: OK
