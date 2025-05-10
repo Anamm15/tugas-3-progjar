@@ -30,7 +30,11 @@ class FileInterface:
         try:
             filename = params[0]
             if (filename == ''):
-                return None
+                raise Exception('filename tidak boleh kosong')
+            
+            if (params[1] == ''):
+                raise Exception('isi file tidak boleh kosong')
+            
             fp = open(f"{filename}",'wb+')
             fp.write(base64.b64decode(params[1]))
             fp.close()
@@ -43,7 +47,8 @@ class FileInterface:
         try:
             filename = params[0]
             if (filename == ''):
-                return None
+                raise Exception('filename tidak boleh kosong')
+            
             os.remove(filename)
             data_message = f"{filename} berhasil dihapus"
             return dict(status='OK',data=data_message)
